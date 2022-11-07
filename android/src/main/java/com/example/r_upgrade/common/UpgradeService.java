@@ -77,8 +77,8 @@ public class UpgradeService extends Service {
                 int id = intent.getIntExtra(PARAMS_ID, 0);
                 runnable.cancel(id);
             } else if (intent != null && intent.getAction() != null && intent.getAction().equals(RECEIVER_PAUSE)) {
-                int id = intent.getIntExtra(PARAMS_ID, 0);
-                runnable.pause(id);
+                /*int id = intent.getIntExtra(PARAMS_ID, 0);
+                runnable.pause(id);*/
             } else if (intent != null && intent.getAction() != null && intent.getAction().equals(RECEIVER_RESTART)) {
                 int id = intent.getIntExtra(PARAMS_ID, 0);
                 runnable = new UpgradeRunnable(true, (long) id, null, null, null, service, sqLite);
